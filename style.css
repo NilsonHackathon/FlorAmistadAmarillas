@@ -1035,14 +1035,18 @@ body {
 }
 
 .music-player {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
+    display: flex; /* Utiliza Flexbox para el layout */
+    align-items: center; /* Centra los elementos verticalmente */
+    justify-content: center; /* Centra los elementos horizontalmente en el contenedor */
+    position: fixed; /* Mantiene el reproductor en una posición fija */
+    bottom: 350px; /* Posición desde abajo */
+    left: 85%; /* Centra el contenedor en la página */
+    transform: translateX(-50%); /* Asegura un centrado perfecto */
+    width: auto; /* Auto ajusta el ancho basado en el contenido */
+    padding: 10px; /* Espacio alrededor del contenido */
+    background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para visibilidad */
     background-color: #333;
-    padding: 5px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    z-index: 100;
 }
 
 .play-pause-btn {
@@ -1082,51 +1086,31 @@ body {
 /* Subir el texto un poco más arriba */
 .text-container {
     position: absolute;
-    top: 4%; /* Ajusté el texto un poco más arriba */
+    top: 6%; /* Ajusté el texto un poco más arriba */
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
+    font-size: 14px;
 }
 
 .signature {
     position: absolute;
-    top: 16%; /* Ajusté la firma un poco más arriba */
+    top: 18%; /* Ajusté la firma un poco más arriba */
     left: 50%;
     transform: translateX(-50%);
     color: rgb(155, 240, 145);
     text-align: center;
+    font-size: 10px;
 }
-
 
 /* Media query para pantallas pequeñas (móviles) */
 @media only screen and (max-width: 600px) {
-    .music-player {
-        position: fixed;
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 90%;  /* Hace que la caja ocupe la mayor parte del ancho de la pantalla */
-        max-width: 300px; /* Limita el tamaño máximo para evitar que sea demasiado grande en dispositivos más anchos */
-        padding: 5px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.5);
-    }
-
     .play-pause-btn {
-        width: 100%; /* Hace que el botón de play/pause ocupe todo el ancho del contenedor */
-        font-size: 16px; /* Asegura que el texto sea legible */
-        padding: 12px 0; /* Aumenta el padding para facilitar la interacción táctil */
+        width: 100%;     /* Hace que el botón ocupe todo el ancho de su contenedor */
+        padding: 10px;   /* Ajuste de padding para un mejor toque */
     }
 
     .album-cover {
-        width: 80px; /* Reduce el tamaño de la imagen del disco para dispositivos móviles */
-        height: 80px;
-        margin: auto; /* Centra la imagen dentro del contenedor */
-    }
-
-    .text-container, .signature {
-        padding: 0 20px; /* Añade padding lateral para evitar que el texto toque los bordes */
-        font-size: 14px; /* Ajusta el tamaño del texto para una mejor legibilidad en móviles */
+        display: none;  /* Oculta la imagen del disco en dispositivos móviles para ahorrar espacio */
     }
 }
-
-/* Puedes hacer ajustes similares para tablets y desktops si lo crees necesario */
